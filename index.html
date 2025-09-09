@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ULTRAKILL</title>
+<style>
+:root{
+  --red:#ff1a1a;
+  --orange:#ff8c00;
+  --white:#ffffff;
+  --black:#000000;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:'Impact','Oswald',Arial,sans-serif;color:var(--white);overflow:hidden;background:#0b0b0b;}
+.bg{position:fixed;inset:0;background:url('ultrakill.png') center/cover no-repeat;z-index:-3;}
+.container{display:flex;flex-direction:row;align-items:center;justify-content:space-between;min-height:100vh;padding:40px;}
+.play-container{display:flex;flex-direction:column;justify-content:center;padding-left:100px;} /* moved button more to the right */
+.play{padding:24px 390px;font-size:28px;font-weight:900;letter-spacing:2px;text-transform:uppercase;border:2px solid var(--white);border-radius:10px;cursor:pointer;background:var(--black);color:var(--white);transition:all 0.3s ease;font-family:'Impact','Oswald',Arial,sans-serif;}
+.play:hover{background:var(--white);color:var(--black);border:none;}
+.play:focus{outline:none;}
+.caption{font-size:16px;color:var(--white);}
+.caption a{color:var(--gray);font-weight:bold;text-decoration:none;}
+.caption a:hover{text-decoration:underline;}
+.about{width:60%;background:rgba(0,0,0,.6);border:2px solid var(--red);padding:30px;border-radius:8px;backdrop-filter:blur(4px);box-shadow:0 0 40px rgba(255,26,26,.2);text-align:center;}
+.about h2{font-size:36px;margin-bottom:20px;text-transform:uppercase;color:var(--red);}
+.about p{font-size:18px;opacity:.9;}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <div class="play-container">
+    <button class="play" id="playBtn">Play</button>
+    <div class="caption">launcher by <a href="https://kazzy.tinyme.lol" target="_blank">kazzy</a> &lt;3</div>
+  </div>
+</div>
+<script>
+const play=document.getElementById('playBtn');
+play.onclick=()=>{
+  play.style.animation='shake 0.5s';
+  setTimeout(()=>{window.location.href='kazzy/kazzys/hvtrs82Fsmlmcgnvrcl2Clml'},500);
+}
+play.addEventListener('animationend',()=>{play.style.animation=''});
+</script>
+<style>
+@keyframes shake{
+  0%{transform:translateX(0)}
+  20%{transform:translateX(-8px)}
+  40%{transform:translateX(8px)}
+  60%{transform:translateX(-6px)}
+  80%{transform:translateX(6px)}
+  100%{transform:translateX(0)}
+}
+</style>
+</body>
+</html>
